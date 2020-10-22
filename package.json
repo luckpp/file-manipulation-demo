@@ -1,0 +1,27 @@
+{
+  "name": "managing-files-with-nodejs",
+  "version": "1.0.0",
+  "description": "Various scripts for the Pluralsight course Managing Files with Node",
+  "main": "index.js",
+  "scripts": {
+    "async": "nodemon ./src/part_1/asynchronous.read.js",
+    "sync": "nodemon ./src/part_1/synchronous.read.js",
+    "prom": "nodemon ./src/part_1/promisified.read.js",
+    "async-part": "nodemon ./src/part_2/asynchronous.read.partial.js",
+    "async-chunk": "nodemon ./src/part_2/asynchronous.read.chunk.js",
+    "sync-part": "nodemon ./src/part_2/synchronous.read.partial.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylonr/managing-files-with-nodejs.git"
+  },
+  "author": "Nate Taylor (taylonr@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylonr/managing-files-with-nodejs/issues"
+  },
+  "homepage": "https://github.com/taylonr/managing-files-with-nodejs#readme",
+  "devDependencies": {
+    "nodemon": "2.0.6"
+  }
+}
