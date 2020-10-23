@@ -1,0 +1,7 @@
+camel-case name: csvParse
+camel-case name: fileDescriptorError
+camel-case name: part_1
+camel-case name: part_2
+camel-case name: part_3
+camel-case name: readLogfile
+camel-case name: utilScripts

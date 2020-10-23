@@ -12,7 +12,8 @@
     "sync-part": "nodemon ./src/part_2/synchronous.read.partial.js",
     "async-write": "nodemon ./src/part_3/asynchronous.write.js",
     "async-append": "nodemon ./src/part_3/asynchronous.append.js",
-    "async-write-options": "nodemon ./src/part_3/asynchronous.write.options.js"
+    "async-write-options": "nodemon ./src/part_3/asynchronous.write.options.js",
+    "print-files": "nodemon ./src/part_3/print.files.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
   "homepage": "https://github.com/taylonr/managing-files-with-nodejs#readme",
   "devDependencies": {
     "nodemon": "2.0.6"
+  },
+  "dependencies": {
+    "camel-case": "4.1.1"
   }
 }
