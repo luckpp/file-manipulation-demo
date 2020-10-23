@@ -2,9 +2,9 @@ const fs = require('fs');
 
 let totalSize = 0;
 
-fs.stat('./data/app.log', (err, { size }) => (totalSize = size));
+fs.stat('./data/app.lg', (err, { size }) => (totalSize = size));
 
-fs.open('./data/app.log', (err, fd) => {
+fs.open('./data/app.lg', (err, fd) => {
   const buffer = Buffer.alloc(200);
 
   for (let i = 0; i <= totalSize / buffer.length; i++) {

@@ -9,7 +9,10 @@
     "prom": "nodemon ./src/part_1/promisified.read.js",
     "async-part": "nodemon ./src/part_2/asynchronous.read.partial.js",
     "async-chunk": "nodemon ./src/part_2/asynchronous.read.chunk.js",
-    "sync-part": "nodemon ./src/part_2/synchronous.read.partial.js"
+    "sync-part": "nodemon ./src/part_2/synchronous.read.partial.js",
+    "async-write": "nodemon ./src/part_3/asynchronous.write.js",
+    "async-append": "nodemon ./src/part_3/asynchronous.append.js",
+    "async-write-options": "nodemon ./src/part_3/asynchronous.write.options.js"
   },
   "repository": {
     "type": "git",

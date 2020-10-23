@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const fd = fs.openSync('./data/app.log');
+const fd = fs.openSync('./data/app.lg');
 let count = 0;
 
 do {
