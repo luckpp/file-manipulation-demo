@@ -13,7 +13,9 @@
     "async-write": "nodemon ./src/part_3/asynchronous.write.js",
     "async-append": "nodemon ./src/part_3/asynchronous.append.js",
     "async-write-options": "nodemon ./src/part_3/asynchronous.write.options.js",
-    "print-files": "nodemon ./src/part_3/print.files.js"
+    "print-files": "nodemon ./src/part_3/print.files.js",
+    "read-stream": "nodemon ./src/part_4/read.stream.js",
+    "write-stream": "nodemon ./src/part_4/write.stream.js"
   },
   "repository": {
     "type": "git",

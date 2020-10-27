@@ -52,3 +52,91 @@ Allowed combinations for **append**:
 - `ax+`
 - `as`
 - `as+`
+
+# Streams
+
+With streams you do not read a stream with a function, instead you receive data via an event.
+
+```js
+const { createReadStream } = require('fs');
+
+const stream = createReadStream('./data/app.lg');
+
+stream.on('data', (data) => console.log(data));
+```
+
+The default size data read out of a stream is **64 kB**. You can change that via the option `highWaterMark`.
+
+```js
+const stream = createReadStream('./data/app.lg', {
+  highWaterMark: 10240,
+});
+```
+
+You could also specify the encoding of the data that you read from a stream:
+
+```js
+const stream = createReadStream('./data/app.lg', {
+  highWaterMark: 9550,
+  encoding: 'utf8',
+});
+```
+
+## Pausing a stream
+
+Sometimes the data from a stream comes muck faster than our capability to process it. In those cases we want to make sure that while we process a `data` event we do not receive additional `data` events.
+
+```js
+stream.on('data', (data) => {
+  stream.pause();
+  console.log(data);
+  setTimeout(() => {
+    stream.resume();
+  }, 1000);
+});
+```
+
+## Writing to streams
+
+The flags used to create a write stream are similar to the ones used to directly write to files.
+
+```js
+const { createReadStream, createWriteStream } = require('fs');
+const { Stream } = require('stream');
+
+const readStream = createReadStream('./data/app.lg', {
+  highWaterMark: 95,
+  encoding: 'utf8',
+});
+
+const writeStream = createWriteStream('./data/out-app.lg');
+
+let iteration = 0;
+
+readStream.on('data', (data) => {
+  readStream.pause();
+  console.log(++iteration);
+
+  writeStream.write(data);
+
+  setTimeout(() => {
+    readStream.resume();
+  }, 100);
+});
+```
+
+In order to remove the **back pressure** that can arise from the write stream being slower as the write stream we can pipe streams:
+
+```js
+const { createReadStream, createWriteStream } = require('fs');
+const { Stream } = require('stream');
+
+const readStream = createReadStream('./data/app.lg', {
+  highWaterMark: 95,
+  encoding: 'utf8',
+});
+
+const writeStream = createWriteStream('./data/out-app.lg');
+
+readStream.pipe(writeStream);
+```
